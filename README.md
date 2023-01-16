@@ -1,6 +1,7 @@
 # Photography Assistant App
 
 NOTE: THIS IS A PLACEHOLDER README 
+
 A mobile app to help wedding photographers keep track of important information related to their clients' weddings, such as the date and location of the ceremony and reception, a list of key shots to take, and contact information for the bride and groom and other important contacts.
 
 ## Features
