@@ -13,6 +13,7 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.versionText}>V0.0.1</Text>
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -38,6 +39,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  versionText: {
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    fontSize: 12,
+    color: 'grey'
   },
   input: {
     width: '80%',
