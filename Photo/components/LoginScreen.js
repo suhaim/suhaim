@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -9,6 +9,7 @@ const LoginScreen = () => {
     // Handle user's input and send it to your server for authentication
     console.log('Email:', email);
     console.log('Password:', password);
+    Alert.alert("Sorry!", "This hasn't been implemented yet.");
   };
 
   return (
