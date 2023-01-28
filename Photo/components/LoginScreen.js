@@ -1,16 +1,30 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import Auth0 from 'react-native-auth0';
+
+const auth0 = new Auth0({ domain: 'dev-6wjnb4s8q4f1x6k4.us.auth0.com', clientId: 'qvkIYPmGXyrAT5GYxPJBFLcjegbLIluH' });
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const onLogin = () => {
-    // Handle user's input and send it to your server for authentication
-    console.log('Email:', email);
-    console.log('Password:', password);
-    Alert.alert("Sorry!", "This hasn't been implemented yet.");
+  const onLogin = async () => {
+    try {
+      const options = {
+        username: email,
+        password: password,
+        connection: 'Username-Password-Authentication'
+      };
+
+      const response = await auth0.webAuth.authorize(options);
+      console.log(response);
+      // handle success
+    } catch (error) {
+      console.log(error);
+      // handle error
+    }
   };
+
 
   return (
     <View style={styles.container}>
@@ -61,5 +75,4 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 });
-
 export default LoginScreen;
